@@ -1,0 +1,33 @@
+<!-- this - onclick, onchange, DOM events + variabler + returverdi + if setninger -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .content {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+      .contentButton {
+        background-color: red;
+      }
+    </style>
+    <title>Codealong #1 -> Random Image Generator</title>
+  </head>
+  <body>
+    <div id="contentDiv" class="content"></div>
+    <button class="contentButton" onclick="getImage()">
+      Klikk Her For Bilde 🎲
+    </button>
+
+    <script>
+      function getImage() {
+        var randomNr = Math.floor(Math.random() * 1001);
+        // console.log(randomNr, " random nr er dette");
+        document.getElementById().innerHTML = "<img style='height: auto; width: 100%;' src='https://picsum.photos/id/'" ;
+      }
+    </script>
+  </body>
+</html>

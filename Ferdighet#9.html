@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .round {
+            border: 5px solid gray;
+            border-radius: 5px;
+        }
+
+        .borderblue {
+            border: 5px solid black;
+            background-color: blue;
+        }
+
+        .bordergreen {
+            border: 5px solid green;
+            background-color: black;
+        }
+
+        .borderpink {
+            border: 5px solid pink;
+
+        }
+
+        .borderbrown {
+            border: 5px solid brown;
+        }
+
+        div.selected::before {
+            content: "🡆";
+        }
+
+        div.selected::after {
+            content: "🡄";
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="blu">Blu Blu BLu</div>
+
+    <input type="checkbox" id="chk" onchange="toggleStyle()">
+
+    <input type="checkbox" id="div1" onchange="toggleDiv1()">
+
+    <div id="bla" onclick="select1(this)">bla bla bla</div>
+    <div id="knapp2" onclick="knapp2(this)">onclick</div>
+
+    <p>Ferdighet 8 - Endre andre ting enn innerHTML: value, style</p>
+    <input id="text" type="text" />
+    <h2 id="overskrift">Overskrift</h2>
+    <button onclick="doSomethingA(this)">A</button>
+    <script>
+        var textInput = document.getElementById('text');
+        var h2Element = document.getElementById('overskrift');
+
+        function select1() {
+            document.getElementById('bla').classList.toggle('selected');
+        }
+        function knapp2() {
+            document.getElementById('knapp2').classList.toggle('selected');
+        }
+
+
+        function toggleStyle() {
+            var isChecked = document.getElementById('chk').checked;
+            document.getElementById('bla').classList.toggle('selected', isChecked);
+        }
+
+        function toggleDiv1() {
+            var isChecked = document.getElementById('div1').checked;
+            document.getElementById('blu').classList.toggle('selected', isChecked);
+        }
+
+        function doSomethingA(clickedElement) {
+            textInput.style.backgroundColor = 'aquamarine';
+            h2Element.style.backgroundColor = 'red';
+            clickedElement.style.backgroundColor = 'aquamarine';
+
+            textInput.classList.add('round');
+            h2Element.classList.add('border');
+            clickedElement.classList.add('round');
+
+            textInput.value = "Trykket på knapp A";
+        }
+
+    </script>
+</body>
+
+</html>

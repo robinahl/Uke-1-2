@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body onload="dateTime()">
+    <img
+      src="https://image.freepik.com/free-photo/image-human-brain_99433-298.jpg"
+      alt="Hjerne"
+    />
+
+    <p>Ferdighet 5 - Kode som kjøres når siden lastes vs kode i en funksjon</p>
+    <button onclick="dateTime()">Trykk her</button>
+    Prøv også å reloade siden.
+    <div id="a"></div>
+    <div id="b"></div>
+
+    <script>
+      document.getElementById("b").innerHTML = "b " + new Date().toTimeString();
+
+      function dateTime() {
+        document.getElementById("a").innerHTML =
+          "a " + new Date().toTimeString();
+      }
+    </script>
+  </body>
+</html>

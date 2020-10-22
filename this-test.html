@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+            <div id="btn1" onclick="ourFunction(this)">btn1</div>
+            <div id="btn2" onclick="ourFunction(this)">btn2</div>
+    <script>
+        var selectedDiv = '';
+        function ourFunction(clickDiv) {
+        selectedDiv = clickDiv;
+        if (selectedDiv.id == 'btn1') {
+            document.getElementById('info').innerHTML += 'du har trykt på den øverste. '
+        }
+        else if (selectedDiv.id == 'btn2') {
+            document.getElementById('info').innerHTML += 'du har trykt på den nederste. '
+        }
+        }
+    </script>
+</body>
+</html>

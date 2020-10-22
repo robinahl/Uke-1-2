@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+    <input id="width" type="range" min="1" max="10" step="1" oninput="calculate()" value="2" />
+    <input id="height" type="range" min="1" max="10" step="1" oninput="calculate()" value="2" />
+    <div id="resultat"></div>
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var tallAInput = document.getElementById('height');
+        var tallBInput = document.getElementById('width');
+
+        calculate();
+
+
+        function calculate() {
+            var width = parseInt(tallAInput.value);
+            var heigth = parseInt(tallBInput.value);
+            var sum = (heigth * 2) + (width * 2);
+            var differense = heigth - width;
+            var produkt = heigth * width;
+            var kvotient = heigth / width;
+            var modulus = heigth % width;
+            resultatDiv.innerHTML = '' +
+            // (width * 2) + (heigth *2)
+                '(' + width + '* 2) +(' + heigth + '* 2) =' + sum + ' cm2' + '<br/>' +
+                // width - heigth
+                width + '-' + heigth + '=' + differense + '<br/>' +
+                //width * heigth
+                width + '*' + heigth + '=' + produkt + '<br/>' +
+                //with / heigth
+                width + '/' + heigth + '=' + kvotient + '<br>' +
+                //width % heigth
+                width + '%' + heigth + '=' + modulus;
+        }
+        console.log(8 % 3);
+    </script>
+</body>
+
+</html>
